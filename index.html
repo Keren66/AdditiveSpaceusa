@@ -553,47 +553,47 @@
 
     <script>
         // ======== DATA ========
-        // 每个模型的图片用 CSS 渐变 + Font Awesome 图标，确保 100% 匹配文本
+        // img = 3D 打印真实照片（用户提供 + AI 生成）
         var featuredModels = [
-            {name:"Articulated Dragon", author:"Flexi Factory", tag:"TOYS", icon:"fa-dragon", color:"linear-gradient(135deg,#7C3AED,#A78BFA)", dl:"25.3K", lk:"8.7K", vw:"89K"},
-            {name:"Parametric Vase", author:"Layer Lab", tag:"DECOR", icon:"fa-wine-bottle", color:"linear-gradient(135deg,#0891B2,#67E8F9)", dl:"12.4K", lk:"3.2K", vw:"45K"},
-            {name:"Cable Management Clip", author:"Studio Form", tag:"TOOLS", icon:"fa-plug", color:"linear-gradient(135deg,#EA580C,#FB923C)", dl:"8.7K", lk:"2.1K", vw:"32K"},
-            {name:"Print-in-Place Gear Box", author:"Gear Works", tag:"MECH", icon:"fa-gears", color:"linear-gradient(135deg,#1E40AF,#3B82F6)", dl:"18.1K", lk:"5.4K", vw:"67K"},
-            {name:"Fantasy Miniature Pack", author:"Quest Forge", tag:"MINI", icon:"fa-chess-knight", color:"linear-gradient(135deg:#BE185D,#F472B6)", dl:"9.3K", lk:"2.7K", vw:"38K"},
-            {name:"Adjustable Phone Stand", author:"Maker North", tag:"TECH", icon:"fa-mobile-screen", color:"linear-gradient(135deg,#059669,#34D399)", dl:"14.8K", lk:"4.1K", vw:"52K"},
-            {name:"Articulated Desk Lamp", author:"Nova Forge", tag:"HOME", icon:"fa-lightbulb", color:"linear-gradient(135deg,#D97706,#FBBF24)", dl:"6.2K", lk:"1.8K", vw:"28K"},
-            {name:"Self-Watering Plant Pot", author:"Common Objects", tag:"GARDEN", icon:"fa-seedling", color:"linear-gradient(135deg,#16A34A,#4ADE80)", dl:"7.5K", lk:"2.3K", vw:"34K"}
+            {name:"Articulated Dragon", author:"Flexi Factory", tag:"TOYS", img:"images/user-dragon-rainbow.png", dl:"25.3K", lk:"8.7K", vw:"89K"},
+            {name:"Parametric Vase", author:"Layer Lab", tag:"DECOR", img:"images/gen-vase.jpg", dl:"12.4K", lk:"3.2K", vw:"45K"},
+            {name:"Cable Management Clip", author:"Studio Form", tag:"TOOLS", img:"images/gen-cable-clip.jpg", dl:"8.7K", lk:"2.1K", vw:"32K"},
+            {name:"Print-in-Place Gear Box", author:"Gear Works", tag:"MECH", img:"images/user-gear-mechanism.png", dl:"18.1K", lk:"5.4K", vw:"67K"},
+            {name:"Fantasy Miniature Pack", author:"Quest Forge", tag:"MINI", img:"images/user-miniatures.png", dl:"9.3K", lk:"2.7K", vw:"38K"},
+            {name:"Adjustable Phone Stand", author:"Maker North", tag:"TECH", img:"images/gen-phone-stand.jpg", dl:"14.8K", lk:"4.1K", vw:"52K"},
+            {name:"Articulated Desk Lamp", author:"Nova Forge", tag:"HOME", img:"images/gen-desk-lamp.jpg", dl:"6.2K", lk:"1.8K", vw:"28K"},
+            {name:"Self-Watering Plant Pot", author:"Common Objects", tag:"GARDEN", img:"images/gen-plant-pot.jpg", dl:"7.5K", lk:"2.3K", vw:"34K"}
         ];
 
         var premiumModels = [
-            {name:"Articulated Dragon Pro", author:"Flexi Factory", tag:"PREMIUM", icon:"fa-dragon", color:"linear-gradient(135deg,#7C3AED,#A78BFA)", price:"$2.99", dl:"25.3K", lk:"8.7K"},
-            {name:"Parametric Vase Set", author:"Layer Lab", tag:"PREMIUM", icon:"fa-wine-bottle", color:"linear-gradient(135deg,#0891B2,#67E8F9)", price:"$1.99", dl:"8.7K", lk:"3.1K"},
-            {name:"Modular Desk System", author:"Studio Form", tag:"PREMIUM", icon:"fa-table-cells", color:"linear-gradient(135deg,#EA580C,#FB923C)", price:"$4.99", dl:"6.2K", lk:"2.4K"},
-            {name:"Print-in-Place Engine", author:"Gear Works", tag:"PREMIUM", icon:"fa-gears", color:"linear-gradient(135deg,#1E40AF,#3B82F6)", price:"$3.49", dl:"14.8K", lk:"5.2K"},
-            {name:"Headphone Stand Pro", author:"Motion Ctrl", tag:"PREMIUM", icon:"fa-headphones", color:"linear-gradient(135deg,#BE185D,#F472B6)", price:"$2.49", dl:"11.2K", lk:"3.8K"},
-            {name:"Lithophane Photo Frame", author:"Light Works", tag:"PREMIUM", icon:"fa-image", color:"linear-gradient(135deg,#D97706,#FBBF24)", price:"$1.49", dl:"9.6K", lk:"2.9K"}
+            {name:"Articulated Dragon Pro", author:"Flexi Factory", tag:"PREMIUM", img:"images/user-dragon-purple.png", price:"$2.99", dl:"25.3K", lk:"8.7K"},
+            {name:"Parametric Vase Set", author:"Layer Lab", tag:"PREMIUM", img:"images/user-vase-collection.png", price:"$1.99", dl:"8.7K", lk:"3.1K"},
+            {name:"Modular Desk System", author:"Studio Form", tag:"PREMIUM", img:"images/user-desk-organizer.png", price:"$4.99", dl:"6.2K", lk:"2.4K"},
+            {name:"Print-in-Place Engine", author:"Gear Works", tag:"PREMIUM", img:"images/gen-gearbox.jpg", price:"$3.49", dl:"14.8K", lk:"5.2K"},
+            {name:"Headphone Stand Pro", author:"Motion Ctrl", tag:"PREMIUM", img:"images/gen-dragon.jpg", price:"$2.49", dl:"11.2K", lk:"3.8K"},
+            {name:"Lithophane Photo Frame", author:"Light Works", tag:"PREMIUM", img:"images/gen-miniature.jpg", price:"$1.49", dl:"9.6K", lk:"2.9K"}
         ];
 
         var storeItems = [
-            {name:"Additive K2 Plus", desc:"Core XY · 350mm/s", tag:"NEW", icon:"fa-print", color:"linear-gradient(135deg,#1E40AF,#3B82F6)", price:"$399", star:"4.8", sold:"2.1K"},
-            {name:"SparkX i7", desc:"Multi-color · IDEX", tag:"HOT", icon:"fa-print", color:"linear-gradient(135deg,#7C3AED,#A78BFA)", price:"$549", star:"4.9", sold:"1.8K"},
-            {name:"PLA Filament 1.75mm", desc:"20+ colors · 1kg", tag:"FILAMENT", icon:"fa-industry", color:"linear-gradient(135deg,#EA580C,#FB923C)", price:"$19.99", star:"4.7", sold:"5.4K"},
-            {name:"Additive Pika Scanner", desc:"0.05mm accuracy", tag:"SCANNER", icon:"fa-camera-retro", color:"linear-gradient(135deg,#059669,#34D399)", price:"$299", star:"4.6", sold:"892"}
+            {name:"Additive K2 Plus", desc:"Core XY · 350mm/s", tag:"NEW", img:"images/user-3d-printer.png", price:"$399", star:"4.8", sold:"2.1K"},
+            {name:"SparkX i7", desc:"Multi-color · IDEX", tag:"HOT", img:"images/user-3d-printer.png", price:"$549", star:"4.9", sold:"1.8K"},
+            {name:"PLA Filament 1.75mm", desc:"20+ colors · 1kg", tag:"FILAMENT", img:"images/gen-vase.jpg", price:"$19.99", star:"4.7", sold:"5.4K"},
+            {name:"Additive Pika Scanner", desc:"0.05mm accuracy", tag:"SCANNER", img:"images/gen-cable-clip.jpg", price:"$299", star:"4.6", sold:"892"}
         ];
 
         var collections = [
-            {title:"3D Prints for Your First Apartment", views:"43.6K", count:"24", icon:"fa-house", color:"linear-gradient(135deg,#D97706,#FBBF24)", sideIcon1:"fa-lightbulb", sideIcon2:"fa-wine-bottle", sideColor1:"#EA580C", sideColor2:"#0891B2"},
-            {title:"Articulated Print-in-Place Toys", views:"12.8K", count:"42", icon:"fa-dragon", color:"linear-gradient(135deg,#7C3AED,#A78BFA)", sideIcon1:"fa-paw", sideIcon2:"fa-spider", sideColor1:"#BE185D", sideColor2:"#1E40AF"},
-            {title:"Functional Workshop Tools", views:"8.4K", count:"36", icon:"fa-screwdriver-wrench", color:"linear-gradient(135deg,#EA580C,#FB923C)", sideIcon1:"fa-plug", sideIcon2:"fa-hammer", sideColor1:"#1E40AF", sideColor2:"#D97706"},
-            {title:"Tabletop Miniatures & Terrain", views:"15.2K", count:"58", icon:"fa-chess-knight", color:"linear-gradient(135deg,#BE185D,#F472B6)", sideIcon1:"fa-dice-d20", sideIcon2:"fa-castle", sideColor1:"#7C3AED", sideColor2:"#059669"},
-            {title:"Modern Home Decor Prints", views:"21.3K", count:"31", icon:"fa-couch", color:"linear-gradient(135deg,#16A34A,#4ADE80)", sideIcon1:"fa-mug-hot", sideIcon2:"fa-picture", sideColor1:"#0891B2", sideColor2:"#D97706"},
-            {title:"Mechanical & Gear Mechanisms", views:"9.7K", count:"27", icon:"fa-gears", color:"linear-gradient(135deg,#1E40AF,#3B82F6)", sideIcon1:"fa-bolt", sideIcon2:"fa-clock", sideColor1:"#7C3AED", sideColor2:"#EA580C"}
+            {title:"3D Prints for Your First Apartment", views:"43.6K", count:"24", img:"images/user-collection-home.png"},
+            {title:"Articulated Print-in-Place Toys", views:"12.8K", count:"42", img:"images/user-collection-toys.png"},
+            {title:"Functional Workshop Tools", views:"8.4K", count:"36", img:"images/user-desk-organizer.png"},
+            {title:"Tabletop Miniatures & Terrain", views:"15.2K", count:"58", img:"images/user-miniatures.png"},
+            {title:"Modern Home Decor Prints", views:"21.3K", count:"31", img:"images/user-vase-collection.png"},
+            {title:"Mechanical & Gear Mechanisms", views:"9.7K", count:"27", img:"images/user-gear-mechanism.png"}
         ];
 
         var contests = [
-            {title:"KitCard Design Contest", desc:"Bigger Rewards, More Winners—Join KitCard Design Contest! Now it's your turn to design the next great KitCard.", icon:"fa-id-card", color:"linear-gradient(135deg,#1E40AF,#3B82F6)", entries:"34", date:"Jul 25 - Aug 30, 2026", lk:"1.1K", cm:"19"},
-            {title:"Credit Card Wand Design Contest", desc:"Who says paying has to be boring? Design the most creative credit card wand!", icon:"fa-wand-magic-sparkles", color:"linear-gradient(135deg,#7C3AED,#A78BFA)", entries:"82", date:"Jul 23 - Aug 23, 2026", lk:"2K", cm:"53"},
-            {title:"Headphone Stand Design Contest", desc:"A great headphone stand does more than hold your headphones. Show us your design!", icon:"fa-headphones", color:"linear-gradient(135deg,#BE185D,#F472B6)", entries:"298", date:"Jul 18 - Aug 23, 2026", lk:"3.1K", cm:"198"}
+            {title:"KitCard Design Contest", desc:"Bigger Rewards, More Winners—Join KitCard Design Contest! Now it's your turn to design the next great KitCard.", img:"images/user-contest-1.png", entries:"34", date:"Jul 25 - Aug 30, 2026", lk:"1.1K", cm:"19"},
+            {title:"Credit Card Wand Design Contest", desc:"Who says paying has to be boring? Design the most creative credit card wand!", img:"images/user-contest-2.png", entries:"82", date:"Jul 23 - Aug 23, 2026", lk:"2K", cm:"53"},
+            {title:"Headphone Stand Design Contest", desc:"A great headphone stand does more than hold your headphones. Show us your design!", img:"images/user-contest-1.png", entries:"298", date:"Jul 18 - Aug 23, 2026", lk:"3.1K", cm:"198"}
         ];
 
         var designers = [
@@ -615,15 +615,11 @@
         };
 
         // ======== RENDER ========
-        function ph(icon, color, label) {
-            return '<div class="ph" style="background:'+color+'"><i class="fas '+icon+'"></i>'+(label?'<span>'+label+'</span>':'')+'</div>';
-        }
-
         // Featured models
         var fh = '';
         featuredModels.forEach(function(m) {
             fh += '<div class="model-card" onclick="openModal(\'login\')"><div class="model-image">'+
-                ph(m.icon, m.color, m.tag) +
+                '<img src="'+m.img+'" alt="'+m.name+'" onerror="this.style.display=\'none\'">' +
                 '<span class="model-tag">'+m.tag+'</span>' +
                 '<button class="model-save" onclick="event.stopPropagation();openModal(\'login\')"><i class="fas fa-plus"></i></button>' +
                 '</div><div class="model-info"><h3>'+m.name+'</h3><p class="author">by '+m.author+'</p>' +
@@ -636,7 +632,7 @@
         var ph2 = '';
         premiumModels.forEach(function(m) {
             ph2 += '<div class="model-card" onclick="openModal(\'login\')"><div class="model-image">'+
-                ph(m.icon, m.color, m.tag) +
+                '<img src="'+m.img+'" alt="'+m.name+'" onerror="this.style.display=\'none\'">' +
                 '<span class="model-tag" style="background:linear-gradient(135deg,#FFD54F,#FF6B35);">'+m.tag+'</span>' +
                 '<button class="model-save" onclick="event.stopPropagation();openModal(\'login\')"><i class="fas fa-plus"></i></button>' +
                 '</div><div class="model-info"><h3>'+m.name+'</h3><p class="author">by '+m.author+'</p>' +
@@ -649,7 +645,7 @@
         var sh = '';
         storeItems.forEach(function(m) {
             sh += '<div class="model-card" onclick="openModal(\'login\')"><div class="model-image">'+
-                ph(m.icon, m.color, m.tag) +
+                '<img src="'+m.img+'" alt="'+m.name+'" onerror="this.style.display=\'none\'">' +
                 '<span class="model-tag">'+m.tag+'</span>' +
                 '</div><div class="model-info"><h3>'+m.name+'</h3><p class="author">'+m.desc+'</p>' +
                 '<div class="model-stats"><span style="color:var(--primary);font-weight:700;font-size:16px;">'+m.price+'</span><span><i class="fas fa-star" style="color:#FFD54F;"></i> '+m.star+'</span><span><i class="fas fa-shopping-cart"></i> '+m.sold+' sold</span></div>' +
@@ -661,11 +657,7 @@
         var ch = '';
         collections.forEach(function(c) {
             ch += '<div class="collection-card" onclick="openModal(\'login\')"><div class="collection-images">'+
-                '<div style="background:'+c.color+';display:flex;align-items:center;justify-content:center;"><i class="fas '+c.icon+'" style="font-size:40px;color:rgba(255,255,255,0.9);"></i></div>' +
-                '<div class="side">' +
-                '<div style="background:'+c.sideColor1+';display:flex;align-items:center;justify-content:center;"><i class="fas '+c.sideIcon1+'" style="font-size:20px;color:rgba(255,255,255,0.8);"></i></div>' +
-                '<div style="background:'+c.sideColor2+';display:flex;align-items:center;justify-content:center;"><i class="fas '+c.sideIcon2+'" style="font-size:20px;color:rgba(255,255,255,0.8);"></i></div>' +
-                '</div>' +
+                '<img src="'+c.img+'" alt="'+c.title+'" onerror="this.style.display=\'none\'" style="grid-column:1/-1;object-fit:cover;">' +
                 '<div class="collection-overlay"><h3>'+c.title+'</h3><p><span><i class="fas fa-eye"></i> '+c.views+' views</span><span><i class="fas fa-layer-group"></i> '+c.count+' models</span></p></div>' +
                 '</div></div>';
         });
@@ -674,8 +666,8 @@
         // Contests
         var ct = '';
         contests.forEach(function(c) {
-            ct += '<div class="contest-card" onclick="openModal(\'login\')"><div class="contest-banner" style="background:'+c.color+';display:flex;align-items:center;justify-content:center;">' +
-                '<i class="fas '+c.icon+'" style="font-size:48px;color:rgba(255,255,255,0.9);"></i>' +
+            ct += '<div class="contest-card" onclick="openModal(\'login\')"><div class="contest-banner">' +
+                '<img src="'+c.img+'" alt="'+c.title+'" onerror="this.style.display=\'none\'">' +
                 '<span class="contest-status">Open</span><span class="contest-entries">'+c.entries+' Entries</span></div>' +
                 '<div class="contest-info"><h3>'+c.title+'</h3><p>'+c.desc+'</p>' +
                 '<div class="contest-prize"><i class="fas fa-gift"></i><span>Win $1,850 & 50,000 Points & Traffic Exposure</span></div>' +
